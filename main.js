@@ -7,7 +7,7 @@
     let flag = document.querySelector('.header > i')
     let flagChecked = false
 
-    let nbrMines = 35
+    let nbrMines = 2
     let minesCasesAdj = 0
 
     numberMines.innerHTML = nbrMines

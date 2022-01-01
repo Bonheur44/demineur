@@ -38,8 +38,6 @@ h3 {
     border: 1px solid #550055;
     height: 7.5vh;
     width: 6vw;
-    margin-right: 10px;
-    margin-left: 10px;
     margin-bottom: 5px;
     transition: 0.3s;
     cursor: pointer;
@@ -51,4 +49,21 @@ h3 {
     text-align: center;
     position: relative;
     top: -20%;
+}
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    .container .aRow div {
+        background: #fff;
+        border: 1px solid #550055;
+        height: 6.8vh;
+        width: 8vw;
+        margin-bottom: 5px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    
 }
