@@ -7,7 +7,7 @@
     let flag = document.querySelector('.header > i')
     let flagChecked = false
 
-    let nbrMines = 10
+    let nbrMines = 35
     let minesCasesAdj = 0
 
     numberMines.innerHTML = nbrMines
@@ -16,7 +16,7 @@
     let tabMines = new Array(9)
 
     for (let i = 0; i < 9; i++) {
-        tabMines[i] = (new Array(9))
+        tabMines[i] = new Array(9)
     }
 
     //Créer un tableau pour les div à double dimension
@@ -160,11 +160,30 @@
         }
     })
 
+    let gagner = () => {
+        if (nbrMines != 0) return
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                if (allDiv[i][j].lastChild != null && allDiv[i][j].lastChild.getAttribute('class') == 'bx bxs-flag') {
+                    if (tabMines[i][j] !== -1)
+                    return
+                }
+            }
+        }
+        setTimeout(() => {
+            container.innerHTML = 'Gagné'
+        }, 300)
+        return
+    }
+
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             allDiv[i][j].addEventListener('click', () => {
                 allDiv[i][j].style.background = '#550055'
-                if (removeAFlag(i, j)) return
+                if (removeAFlag(i, j)) {
+                    gagner()
+                    return
+                }
                 else if (flagChecked) {
                     putAFlag(i, j)
                 } else if (tabMines[i][j] == -1) {
@@ -172,6 +191,7 @@
                 } else {
                     digCaseAdj(i, j)
                 }
+                gagner()
             })
         }
     }
