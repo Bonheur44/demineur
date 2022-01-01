@@ -1,0 +1,54 @@
+h2 {
+    text-align: center;
+    margin-bottom: -1px;
+}
+
+.header div {
+    display: inline-block;
+    font-size: 40px;
+}
+
+.header > i {
+    color: #550055;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+h3 {
+    text-align: center;
+    position: relative;
+    color: #fff;
+    top: 18%;
+}
+
+.container {
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.container .aRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .aRow div {
+    background: #fff;
+    border: 1px solid #550055;
+    height: 50px;
+    width: 70px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.container .aRow div i {
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    top: -20%;
+}
